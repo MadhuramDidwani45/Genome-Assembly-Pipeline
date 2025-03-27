@@ -9,17 +9,17 @@ This pipeline provides a comprehensive workflow for genome assembly and analysis
 - Prefetch and convert SRA files to FASTQ format.
 
 ### 2. Quality Control
-- Perform initial quality assessment using FastQC.
-- Trim low-quality reads with Trimmomatic:
+- Perform initial quality assessment using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+- Trim low-quality reads with [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic):
   - Standard trimming.
   - Crop reads to a specific length (250bp).
 - Rerun quality control on trimmed reads.
 
 ### 3. Read Error Correction
-- Use SPAdes for error correction of raw reads.
+- Use [SPAdes](http://cab.spbu.ru/software/spades/) for error correction of raw reads.
 
 ### 4. Genome Assembly
-- Perform genome assembly using SPAdes:
+- Perform genome assembly using [SPAdes](http://cab.spbu.ru/software/spades/):
   - Default assembly settings.
   - Careful mode with custom k-mer sizes.
 
@@ -27,11 +27,11 @@ This pipeline provides a comprehensive workflow for genome assembly and analysis
 - Download reference genome and annotation files.
 
 ### 6. Assembly Evaluation
-- Use QUAST to evaluate assembly quality.
+- Use [QUAST](http://bioinf.spbau.ru/quast) to evaluate assembly quality.
 - Compare different assembly strategies.
 
 ### 7. Genome Annotation
-- Annotate assembled genome using Prokka.
+- Annotate assembled genome using [Prokka](https://github.com/tseemann/prokka).
 
 ## System Requirements
 
@@ -39,15 +39,15 @@ This pipeline provides a comprehensive workflow for genome assembly and analysis
 - Linux (Ubuntu recommended)
 
 ### Required Tools
-- Bash
-- SRA Toolkit
-- FastQC
-- Trimmomatic
-- SPAdes
-- QUAST
-- Prokka
-- wget
-
+- [Bash](https://www.gnu.org/software/bash/)
+- [SRA Toolkit](https://github.com/ncbi/sra-tools)
+- [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+- [SPAdes](http://cab.spbu.ru/software/spades/)
+- [QUAST](http://bioinf.spbau.ru/quast)
+- [Prokka](https://github.com/tseemann/prokka)
+- [wget](https://www.gnu.org/software/wget/)
+  
 ## Repository Structure
 ```
 ├── Data
@@ -75,13 +75,11 @@ This pipeline provides a comprehensive workflow for genome assembly and analysis
     └── report.pdf
 ```
 
-
 ## Installation
 
 ### Dependencies
 ```bash
 # Example installation commands using Conda
-data
 conda create -n genome_assembly -y
 conda activate genome_assembly
 conda install -c bioconda sra-tools fastqc trimmomatic spades quast prokka -y
@@ -105,3 +103,6 @@ chmod +x genome_assembly.sh
 - Customize the SRA accession number in the script.
 - Modify trimming parameters as needed.
 - Adjust SPAdes assembly parameters for your specific use case.
+- Modify QUAST parameters to suit different evaluation metrics.
+- Configure Prokka annotation settings for customized genome annotation.
+
