@@ -89,7 +89,7 @@ conda install -c bioconda sra-tools fastqc trimmomatic spades quast prokka -y
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/genome-assembly-pipeline.git
+git clone https://github.com/MadhuramDidwani45/genome-assembly-pipeline.git
 cd genome-assembly-pipeline
 ```
 
